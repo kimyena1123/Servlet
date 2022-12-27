@@ -15,8 +15,6 @@ public class Ex05Controller_1227 extends HttpServlet{
 	//doGet -> doPost
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		
-		req.setCharacterEncoding("utf-8");
-		res.setCharacterEncoding("utf-8");
 		res.setContentType("text/html");
 		
 		PrintWriter out = res.getWriter();
