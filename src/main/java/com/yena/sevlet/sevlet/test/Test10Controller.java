@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/servlet/test10")
 public class Test10Controller extends HttpServlet{
 	
-	// doPost 메소드 바깥쪽에 위치
 	private final Map<String, String> userMap =  new HashMap<String, String>() {
 	    {
 	        put("id", "hagulu");
@@ -32,7 +31,7 @@ public class Test10Controller extends HttpServlet{
 		
 		String user_id = req.getParameter("user_id");
 		String user_pw = req.getParameter("user_pw");
-		
+
 		out.println("<html><head></head><body>");
 //		out.println("<h1>" + userMap.get("id") + "</h1>");
 //		out.println("<h1>" + userMap.get("password") + "</h1>");
