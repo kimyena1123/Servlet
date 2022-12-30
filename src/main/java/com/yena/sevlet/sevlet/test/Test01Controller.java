@@ -30,5 +30,7 @@ public class Test01Controller extends HttpServlet{
 		String date = formatter.format(now);
 		
 		out.println("오늘의 날짜는 " + date + " 입니다");
+		
+		
 	}
 }
