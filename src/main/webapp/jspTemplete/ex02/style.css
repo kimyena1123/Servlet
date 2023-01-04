@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+header{
+	height: 100px;
+	background-color: pink;
+}
+.main-menu{
+	height: 50px;
+}
+/*)
+.contents{
+	height: 500px;
+}
+*/
+footer{
+	height: 70px;
+}
