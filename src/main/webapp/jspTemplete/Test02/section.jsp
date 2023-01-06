@@ -83,41 +83,55 @@ String musicId = request.getParameter("musicId");
     musicInfo.put("lyricist", "아이유");
     musicList.add(musicInfo);
    
+    String searchTitle = request.getParameter("searchTitle");
 %>
     
 <section>
 	<div class = "bigDiv">
-		<div class = "imgDiv">
-			<img src = "<%= artistInfo.get("photo")%>">
-		</div>
-		
 		<div class = "text">
-			<% if(musicId == null) { %>
-				<h1><%= artistInfo.get("name") %></h1>
-				<p><%= artistInfo.get("agency") %></p>
-				<p><%= artistInfo.get("debute") %>데뷔</p>
-			<% } else{ //앨범을 누른 경우 -> 태그 -> musicId가 있는경우
-					int musicInt = Integer.parseInt(musicId);
+			<% if(musicId == null && searchTitle == null) { %>
 			
-					for(Map<String,Object> music:musicList) {
+				<div class = "singInfo">
+					<div class = "imgDiv">
+						<img src = "<%= artistInfo.get("photo")%>">
+					</div>
+					
+					<div class = "detail">
+						<h1><%= artistInfo.get("name") %></h1>
+						<p><%= artistInfo.get("agency") %></p>
+						<p><%= artistInfo.get("debute") %>데뷔</p>				
+					</div>
+				</div>
+			<% } else if(musicId != null){ //앨범을 누른 경우 -> 태그 -> musicId가 있는경우
+					
+				int musicInt = Integer.parseInt(musicId);
+				
+				for(Map<String,Object> music:musicList) {
 						
 						int id = (int)music.get("id");
 						int musicTime = (int)music.get("time");
 						int minute = musicTime / 60;
 						int seconds = musicTime % 60;
 						
-						
 						if(id == musicInt){ // 둘 다 int형으로 비교.
 			%>
 						<!-- <h1>music.id: <%= music.get("id") %></h1>
 						<h1>musicId: <%= musicId %></h1> -->
 						
-						<h1><%= music.get("title") %></h1>
-						<h3><%= music.get("singer") %></h3>
-						<h4>앨범<%= music.get("album") %></h4>
-						<h4>재생시간<%= minute %>.<%= seconds %></h4>
-						<h4>작곡가 <%= music.get("composer") %></h4>
-						<h4>작사가 <%= music.get("lyricist") %></h4>
+							<div class = "singInfo">
+								<div class = "imgDiv">
+									<img src = "<%= music.get("thumbnail")%>">
+								</div>
+						
+								<div class = "detail">
+									<h1><%= music.get("title") %></h1>
+									<h3><%= music.get("singer") %></h3>
+									<h4>앨범<%= music.get("album") %></h4>
+									<h4>재생시간<%= minute %>.<%= seconds %></h4>
+									<h4>작곡가 <%= music.get("composer") %></h4>
+									<h4>작사가 <%= music.get("lyricist") %></h4>						
+								</div>
+							</div>
 					<% } %>
 				<% } %>
 			<% } %>

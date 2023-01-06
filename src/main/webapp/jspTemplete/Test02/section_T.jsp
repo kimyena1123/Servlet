@@ -1,14 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="java.util.*" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<%@ page import="java.util.*" %>
 <link rel = "stylesheet" href = "/jspTemplete/Test02/music.css">
-</head>
-<body>
 <%
 // 아티스트 정보 
 
@@ -87,39 +80,19 @@
     musicInfo.put("composer", "아이유,이종훈,이채규");
     musicInfo.put("lyricist", "아이유");
     musicList.add(musicInfo);
+   
 %>
-	<div class = "container">
-		<jsp:include page="header.jsp" />
-		
-		<jsp:include page="nav.jsp" />
-		
-		<jsp:include page="section.jsp" />
-		
-		
-		<div class = "contents">
-			<h1>곡 목록</h1>
-			<table>
-				<thead>
-					<tr>
-						<th>no</th>
-						<th>제목</th>
-						<th>앨범</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% for(Map<String, Object> music:musicList){ %>
-					<tr>
-						<td><%= music.get("id") %></td>
-						<td>
-							<a href = "/jspTemplete/Test02/Test02_detail.jsp?musicId=<%= music.get("id")%>"><%= music.get("title") %></a>
-						</td>
-						<td><%= music.get("album") %></td>
-					</tr>
-					<% } %>
-				</tbody>
-			</table>
+    
+<section>
+	<div class = "bigDiv">
+		<div class = "photo">
+			<img width = "150" src = "<%= artistInfo.get("photo")%>">
 		</div>
-		<jsp:include page="footer.jsp" />
+		
+		<div class = "info">
+			<h3><%= artistInfo.get("name") %></h3>
+			<div><%= artistInfo.get("agency") %></div>
+			<div><%= artistInfo.get("debute") %></div>
+		</div>
 	</div>
-</body>
-</html>
+</section>

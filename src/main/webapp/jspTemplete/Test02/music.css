@@ -87,6 +87,10 @@ section .bigDiv img{
 	height: 320px;
 	margin-left: 50px;
 }
+section .signInfo{
+	border: 3px solid red;
+	display: flex;
+}
 footer{
 	height: 70px;
 	font-size: 20px;
