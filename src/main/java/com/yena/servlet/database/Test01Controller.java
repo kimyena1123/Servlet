@@ -56,7 +56,7 @@ public class Test01Controller extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-		//접속 끊기
+		//접속 끊기 disconnect();
 		mysqlService.disconnect();
 		
 		
