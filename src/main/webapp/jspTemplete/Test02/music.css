@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+}
+header{
+	height: 100px;
+	display: flex;
+	align-items: center;
+}
+header .title{
+	margin: 0 50px;
+	color: green;
+}
+header input{
+	width: 300px;
+	padding: 6px 0; 
+}
+header button{
+	width: 50px;
+	padding: 6px 0;
+}
+nav{
+	height: 100px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+nav ul{
+	display: flex;
+	list-style: none;
+	margin-left: 50px;
+}
+nav ul li{
+	margin: 0 10px;
+	font-size: 23px;
+}
+nav ul li a{
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+}
+section{
+	height: 300px;
+	margin-bottom: 50px;
+}
+section .bigDiv{
+	width: 98%;
+	height: 100%;
+	border: 2px solid green;
+	margin: 0 auto;
+	display: flex;
+}
+section .bigDiv .imgDiv{
+	margin: auto 30px;
+}
+section .bigDiv .text{
+	margin: 50px 0;
+}
+section .bigDiv img{
+	width: 200px;
+	height: 200px;
+}
+.contents{
+	height: 380px;
+}
+.contents h1{
+	margin: 0 30px;
+}
+.contents table{
+	margin: 0 30px;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 30px;
+}
+.contents table a{
+	text-decoration: none;
+}
+.info{
+	height: 320px;
+	margin-left: 50px;
+}
+section .signInfo{
+	border: 3px solid red;
+	display: flex;
+}
+footer{
+	height: 70px;
+	font-size: 20px;
+}
