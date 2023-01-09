@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	widht: 100vw;
+}
+header{
+	background-color:#FF7F50;
+	widht: 100%;
+	height: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header h1{
+	color: white;
+	font-size: 50px;
+}
+nav{
+	background-color: #FF7F50;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+nav ul{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+}
+nav ul li a{
+	color: white;
+	font-size: 25px;
+	font-weight: 600;
+}
+section{
+	widht: 100%;
+}
+section .goods{
+	width: 95%;
+	border: 3px solid black;
+	display: flex;
+}
+section .product{
+	border: 2px solid orange;
+	width: 32%;
+	height: 300px;
+}
+footer{
+	widht: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
