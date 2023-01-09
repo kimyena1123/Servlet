@@ -23,7 +23,8 @@ public class Test01Controller extends HttpServlet{
 	
 		//MysqlService에는
 		//connect() / select() / update() / disconnect() 있음
-		MysqlService mysqlService = new MysqlService();
+		//MysqlService mysqlService = new MysqlService();
+		MysqlService mysqlService = MysqlService.getInstance();
 		mysqlService.connect();
 		
 		
@@ -39,9 +40,12 @@ public class Test01Controller extends HttpServlet{
 		
 		//select 하기(전체 매물 리스트 출력)
 		//매물주소, 면적, 타입만 출력하는데 id 기준 내림차순으로 10개만 출력
-		//String selectQuery = "SELECT concat('매물주소 : ', `address`, ' / 면적 : ', `area`, ' / 타입 : ', `type`) FROM `real_estate` ORDER BY id DESC LIMIT 10;";
+	
 		String selectQuery = "SELECT * FROM `real_estate` ORDER BY id DESC LIMIT 10;";
 		ResultSet resultSet = mysqlService.select(selectQuery);
+		
+		//String select = "select `address`, `area`, `type` FROM `real_estate` ORDER BY id DESC LIMIT 10;";
+		
 		
 		try {
 			while(resultSet.next()) {
@@ -50,6 +54,10 @@ public class Test01Controller extends HttpServlet{
 				String type = resultSet.getString("type");
 				
 				out.println("매물 주소 : " + address + " / 면적 : " + area + " / 타입 : " + type);
+				
+				//out.print("매물 주소 : " + resultSet.getString("address"));
+				//out.print(", 면적 : " + resultSet.getInt("area"));
+				//out.println(", 타입 : " + resultSet.getString("type"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
